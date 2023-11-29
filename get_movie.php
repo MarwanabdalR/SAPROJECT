@@ -72,7 +72,7 @@
         <div id="nav">
             <nav>
                 <ul class="nav">
-                    <li class="nav"><a href="index.html">Home</a></li>
+                    <li class="nav"><a href="index.php">Home</a></li>
                     <li class="nav"><a class="active" href="movies.html">Movies</a></li>
                     <li class="nav"><a href="cinema.html">Cinema</a></li>
                 </ul>
@@ -80,7 +80,7 @@
         </div>
 
         <ul class="breadcrumb">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li><a href="movies.html">Movie</a></li>
             <li><?php echo $movie_name ?></li>
         </ul>

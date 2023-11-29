@@ -1,6 +1,6 @@
-# EE4717-Cinema Booking-Project
+# SA HELWAN-Cinema Booking-Project
 
-A simple cinema booking webapp for EE4717 year 4 Web Application Design course NTU
+A simple cinema booking webapp for SA 
 
 ## Functions
 - Browse movies

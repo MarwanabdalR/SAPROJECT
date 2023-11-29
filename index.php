@@ -1,3 +1,33 @@
+<?php
+session_start();
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "movie";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $opinion = $_POST['opinion'];
+
+    $stmt = $conn->prepare("INSERT INTO feedback(fname, email, opinion)
+                VALUES(?, ?, ?);");
+
+    $stmt->bind_param("sss", $name, $email, $opinion);
+    $stmt->execute();
+}
+
+$conn->close();
+
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -75,7 +105,7 @@
         <div id="nav">
             <nav>
                 <ul class="nav">
-                    <li class="nav"><a class="active" href="index.html">Home</a></li>
+                    <li class="nav"><a class="active" href="index.php">Home</a></li>
                     <li class="nav"><a href="movies.html">Movies</a></li>
                     <li class="nav"><a href="cinema.html">Cinema</a></li>
                 </ul>
@@ -130,13 +160,13 @@
             <div class="tab">
                 <button class="tablinks" onclick="openTab(event, 'Now_Showing')" id="defaultOpen">Now Showing</button>
                 <button class="tablinks" onclick="openTab(event, 'Coming_Soon')">Coming Soon</button>
-                <button class="tablinks" onclick="openTab(event, 'feed')"> feedback</button>
+                <button class="tablinks" onclick="openTab(event, 'feed')"> FeedBack</button>
             </div>
               <!-- Tab content -->
-              
-              <div class="feedback-form tabcontent" id="feed">
+
+            <div class="feedback-form tabcontent" id="feed">
                 <h2>Feedback Form</h2>
-                <form>
+                <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required>
         
@@ -149,7 +179,7 @@
                     <button type="submit">Submit Feedback</button>
                 </form>
             </div>
-              <div id="Now_Showing" class="tabcontent">
+            <div id="Now_Showing" class="tabcontent">
                 <h3>Featured</h3>
                 <p>Top block busters only</p>
                 
