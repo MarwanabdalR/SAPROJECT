@@ -34,60 +34,10 @@
                     <li class="nav"><a class="active" href="index.html">Home</a></li>
                     <li class="nav"><a href="movies.html">Movies</a></li>
                     <li class="nav"><a href="cinema.html">Cinema</a></li>
-                    <li class="nav"><a href="javascript:openModal()">Check Booking</a></li> <!--trigger js to open modal-->
                 </ul>
             </nav>
         </div>
-        <!-- The Modal -->
-        <div id="myModal" class="modal">
-
-            <!-- Modal content -->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <span class="close">&times;</span>
-                    <h3>Check Booking</h3>
-                </div>
-                <div class="modal-body">
-                    <br>
-                    <form action="check_booking.php" method="post" style="text-align: center;"> <!--php script to check method, match detail and fetch data from db-->
-                        <label for="check_method">Method:&nbsp;</label>
-                        <select name="check_method" id="check_method">
-                            <option value="email" selected>E-mail</option>
-                            <option value="hp">Phone</option>
-                            <option value="bookid">Ref no.</option>
-                        </select>
-                        <br><br>
-                        <input type="text" name="user_detail" id="user_detail" size="25" required placeholder = "enter details here">
-                        <input type="submit" value="Check" id="user_detail_submit">
-                    </form>
-                </div>
-            </div>
-        </div>
-        <script>
-            // Get the modal
-            var modal = document.getElementById("myModal");
-
-            // Get the button that opens the modal
-            var btn = document.getElementById("myBtn");
-
-            // Get the <span> element that closes the modal
-            var span = document.getElementsByClassName("close")[0];
-
-            // When the user clicks the button, open the modal 
-            function openModal() {
-                modal.style.display = "block";
-            }
-            // When the user clicks on <span> (x), close the modal
-            span.onclick = function() {
-                modal.style.display = "none";
-            }
-            // When the user clicks anywhere outside of the modal, close it
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
-            }
-        </script>
+        
 
         <div class="slideshow-container">
             <div class="mySlides fade">
@@ -111,7 +61,6 @@
             <span class="dot"></span> 
             </div>
         </div>
-          
         <script>
         var slideIndex = 0;
         showSlides();
@@ -130,7 +79,7 @@
         }
         slides[slideIndex-1].style.display = "block";  
         dots[slideIndex-1].className += " active";
-        setTimeout(showSlides, 5000); // Change image every 2 seconds
+        setTimeout(showSlides, 10000); // Change image every 2 seconds
         }
         </script>
         <div class="content">

@@ -75,61 +75,10 @@
                     <li class="nav"><a href="index.html">Home</a></li>
                     <li class="nav"><a class="active" href="movies.html">Movies</a></li>
                     <li class="nav"><a href="cinema.html">Cinema</a></li>
-                    <li class="nav"><a href="javascript:openModal()">Check Booking</a></li> <!--trigger js to open modal-->
                 </ul>
             </nav>
         </div>
-        <!-- The Modal -->
-        <div id="myModal" class="modal">
 
-            <!-- Modal content -->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <span class="close">&times;</span>
-                    <h3>Check Booking</h3>
-                </div>
-                <div class="modal-body">
-                    <br>
-                    <form action="check_booking.php" method="post" style="text-align: center;"> <!--php script to check method, match detail and fetch data from db-->
-                        <label for="check_method">Method:&nbsp;</label>
-                        <select name="check_method" id="check_method">
-                            <option value="email" selected>E-mail</option>
-                            <option value="hp">Phone</option>
-                            <option value="bookid">Ref no.</option>
-                        </select>
-                        <br><br>
-                        <input type="text" name="user_detail" id="user_detail" size="25" required placeholder = "enter details here">
-                        <input type="submit" value="Check" id="user_detail_submit">
-                    </form>
-                </div>
-            </div>
-        </div>
-        <script>
-            // Get the modal
-            var modal = document.getElementById("myModal");
-
-            // Get the button that opens the modal
-            var btn = document.getElementById("myBtn");
-
-            // Get the <span> element that closes the modal
-            var span = document.getElementsByClassName("close")[0];
-
-            // When the user clicks the button, open the modal 
-            function openModal() {
-                modal.style.display = "block";
-            }
-            // When the user clicks on <span> (x), close the modal
-            span.onclick = function() {
-                modal.style.display = "none";
-            }
-            // When the user clicks anywhere outside of the modal, close it
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
-            }
-        </script>
-        
         <ul class="breadcrumb">
             <li><a href="index.html">Home</a></li>
             <li><a href="movies.html">Movie</a></li>
@@ -138,9 +87,7 @@
 
         <div class="content">
             <!---------------------------------------------------------------content here---------------------------------------------------->
-            <?php
-                # `movie_id`, `movie_name`, `duration`, `language`, `genre`, `distributor`, `release_date`, `image_dir`, `synopsis`, `rating`, `cast`, `director`
-            ?>
+            
             <div class="mini_wrapper">
                 <h2 class="movie_title"><?php echo $movie_name ?></h2>
                 <p class="rating">(<?php echo $rating?>)</p>
@@ -192,9 +139,9 @@
                             <td>
                                 Please Choose Date and Timing for Movie: <br><br>Date: 
                                 <Select name = "date"> // drop down table for dates
-                                    <option value = "2-Nov-2022">2/11/22</option>
-                                    <option value = "3-Nov-2022">3/11/22</option>
-                                    <option value = "4-Nov-2022">4/11/22</option>
+                                    <option value = "2-Nov-2023">2/11/23</option>
+                                    <option value = "3-Nov-2023">3/11/23</option>
+                                    <option value = "4-Nov-2023">4/11/23</option>
                                 </select>
                                 <br><br>
                             </td>
@@ -202,11 +149,12 @@
                         <tr>
                             <td>
                                 <br>
-                                <input class="ticket_timing_button" name = "timingButton" type="submit" value="1000">
-                                <input class="ticket_timing_button" name = "timingButton" type="submit" value="1300">
-                                <input class="ticket_timing_button" name = "timingButton" type="submit" value="1630">
-                                <input class="ticket_timing_button" name = "timingButton" type="submit" value="1800">
-                                <input class="ticket_timing_button" name = "timingButton" type="submit" value="2000">
+                                <input class="ticket_timing_button" name = "timingButton" type="submit" value="2:00 pm">
+                                <input class="ticket_timing_button" name = "timingButton" type="submit" value="6:00 pm">
+                                <input class="ticket_timing_button" name = "timingButton" type="submit" value="10:00 pm">
+                                <input class="ticket_timing_button" name = "timingButton" type="submit" value="12:00 am">
+                                <input class="ticket_timing_button" name = "timingButton" type="submit" value="9:00 am">
+                                <input class="ticket_timing_button" name = "timingButton" type="submit" value="900:00 am">
                             </td>
                         </tr>
                         </table>
