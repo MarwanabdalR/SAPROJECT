@@ -133,7 +133,7 @@
                 </div>
                 <div class="booking">
                     <!-------------------------BOOKNG CODES HERER-------------------------->
-                    <form class="booking" action="ticket_purchase_cont.php" method="get">
+                    <form class="booking" action="book_form.php" method="get">
                         <table class="booking">
                         <tr>
                             <td>
@@ -149,7 +149,7 @@
                         <tr>
                             <td>
                                 <br>
-                                <input class="ticket_timing_button" name = "timingButton" type="submit" value="2:00 pm">
+                                <input class="ticket_timing_button" name = "timingButton" type="submit" value="2:00 pm" >
                                 <input class="ticket_timing_button" name = "timingButton" type="submit" value="6:00 pm">
                                 <input class="ticket_timing_button" name = "timingButton" type="submit" value="10:00 pm">
                                 <input class="ticket_timing_button" name = "timingButton" type="submit" value="12:00 am">

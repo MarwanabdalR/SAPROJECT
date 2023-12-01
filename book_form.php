@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt = $conn->prepare("INSERT INTO booking_form(CARD_NUMBER , CARD_HOLDER , EXPIRATION_MM, EXPIRATION_YY, CVV, SELECT_YOUR_SNACKS, movie_name)
                 VALUES(?, ?, ?, ?, ? ,? , ? );");
 
-    $stmt->bind_param("sssssss", $card_number,$card_holder, $expiration_mm, $expiration_yy, $cvv, $food,$movie_name);
+    $stmt->bind_param("isssiss", $card_number,$card_holder, $expiration_mm, $expiration_yy, $cvv, $food,$movie_name);
     $stmt->execute();
 }
 $conn->close();
@@ -83,16 +83,16 @@ $conn->close();
     <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
         <div class="inputBox">
             <span>card number</span>
-            <input type="text" maxlength="16" class="card-number-input" name="card_number">
+            <input type="text" maxlength="16" class="card-number-input" name="card_number" required>
         </div>
         <div class="inputBox">
             <span>card holder</span>
-            <input type="text" maxlength="25" class="card-holder-input" name="card_holder">
+            <input type="text" maxlength="25" class="card-holder-input" name="card_holder" required>
         </div>
         <div class="flexbox">
             <div class="inputBox">
                 <span>expiration mm</span>
-                <select name="expiration_mm" id="" class="month-input">
+                <select name="expiration_mm" id="" class="month-input" required>
                     <option value="month" selected disabled>month</option>
                     <option value="01">01</option>
                     <option value="02">02</option>
@@ -110,7 +110,7 @@ $conn->close();
             </div>
             <div class="inputBox">
                 <span>expiration yy</span>
-                <select name="expiration_yy" id="" class="year-input">
+                <select name="expiration_yy" id="" class="year-input" required>
                     <option value="year" selected disabled>year</option>
                     <option value="2021">2021</option>
                     <option value="2022">2022</option>
@@ -126,12 +126,12 @@ $conn->close();
             </div>
             <div class="inputBox">
                 <span>cvv</span>
-                <input type="text" maxlength="4" class="cvv-input" name ="cvv">
+                <input type="text" maxlength="4" class="cvv-input" name ="cvv" required>
             </div>
         </div>
         <div class="inputBox">
             <span>MOVIE NAME</span>
-            <select name="movie_name" id="" class="year-input">
+            <select name="movie_name" id="" class="year-input" required>
                 <option value="Movie Name" selected disabled>Movie Name</option>
                 <option value="Black Panther: Wakanda Forever">Black Panther: Wakanda Forever</option>
                 <option value="Avatar: The Way Of Water">Avatar: The Way Of Water</option>
@@ -143,7 +143,7 @@ $conn->close();
         </div>
         <div class="inputBox">
             <span>Select your snacks</span>
-            <select name="food" id="" class="year-input">
+            <select name="food" id="" class="year-input" required> 
                 <option value="food" selected disabled>FOOD & DRINKS </option>
                 <option value="Popcorn Large">Popcorn Large 7.5$</option>
                 <option value="Popcorn Medium">Popcorn Medium 5$</option>
