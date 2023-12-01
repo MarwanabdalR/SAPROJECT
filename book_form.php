@@ -111,7 +111,7 @@ $conn->close();
     <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
         <div class="inputBox">
             <span>card number</span>
-            <input type="text" maxlength="16" class="card-number-input" name="card_number" required>
+            <input type="text" pattern="[0-9]{12}" title ="card number must be numeric and 12 numbers" maxlength="12" class="card-number-input" name="card_number" required>
         </div>
         <div class="inputBox">
             <span>card holder</span>
@@ -154,7 +154,7 @@ $conn->close();
             </div>
             <div class="inputBox">
                 <span>cvv</span>
-                <input type="text" maxlength="4" class="cvv-input" name ="cvv" required>
+                <input type="text" pattern="[0-9]{4}" title ="CVV must be numeric and 4 numbers" maxlength="4" class="cvv-input" name ="cvv" required>
             </div>
         </div>
         <div class="inputBox">
