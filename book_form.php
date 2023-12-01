@@ -27,14 +27,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->bind_param("sssssss", $card_number,$card_holder, $expiration_mm, $expiration_yy, $cvv, $food,$movie_name);
     $stmt->execute();
 }
-echo "done";
 $conn->close();
 
 ?>
-echo "done";
-$conn->close();
 
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
