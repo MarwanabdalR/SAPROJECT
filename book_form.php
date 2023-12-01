@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->execute();
 }
 $conn->close();
-
+//مجدي
 ?>
 
 <!DOCTYPE html>
