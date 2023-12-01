@@ -4,7 +4,30 @@
         <title> login </title>
         <link rel="stylesheet" type="text/css" href="log_style.css">
         <style>
-            
+            .btn {
+	border: 2px solid black;
+	background-color: white;
+	color: black;
+	padding: 14px 28px;
+    border-radius: 26px;
+    box-shadow: 0px 2px 2px #596980;
+	font-size: 16px;
+	cursor: pointer;
+    align-items: center;
+    font-weight: 700;
+    right: 40px;
+    bottom: 60px;
+    position: absolute;
+  }
+  .info {
+	border-color: #D4D3E8;
+	color: dodgerblue
+  }
+  
+  .info:hover {
+	background:  #0084ff;
+	color: white;
+  }  
         </style>
     </head>
     <body>
@@ -28,7 +51,10 @@
                                 <i class="button__icon fas fa-chevron-right"></i>
                             </button>				
                     </form>
-                    
+                    <input type="button" class="btn info" onclick="location.href='register.php';" value="Register" />
+                   <!--  <form action="register.php" method="post">
+                        <button class="btn info">Register</button>
+                    </form> -->
                     <div class="social-login">
                         <img id='company_logo' src="header_img/header.png" alt="Logo" width="150px">
                         <div class="social-icons">
