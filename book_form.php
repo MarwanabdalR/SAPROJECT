@@ -65,7 +65,7 @@ $conn->close();
         <div id="nav">
             <nav>
                 <ul class="nav">
-                    <li class="nav"><a href="index.php">Home</a></li>
+                    <li class="nav"><a href="home.php">Home</a></li>
                     <li class="nav"><a class="active" href="movies.html">Movies</a></li>
                     <li class="nav"><a href="cinema.html">Cinema</a></li>
 
