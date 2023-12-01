@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 
@@ -13,21 +12,25 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-if (isset($_POST['insert'])) {
-    $card_number = $_POST['card number'];
-    $card_holder = $_POST['card holder'];
-    $expiration_mm = $_POST['expiration mm'];
-    $expiration_yy = $_POST['expiration yy'];
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $card_number = $_POST['card_number'];
+    $card_holder = $_POST['card_holder'];
+    $expiration_mm = $_POST['expiration_mm'];
+    $expiration_yy = $_POST['expiration_yy'];
     $cvv = $_POST['cvv'];
-    $movie_name = $_POST['movie name'];
+    $movie_name = $_POST['movie_name'];
     $food = $_POST['food'];
-    
+   
     $stmt = $conn->prepare("INSERT INTO booking_form(CARD_NUMBER , CARD_HOLDER , EXPIRATION_MM, EXPIRATION_YY, CVV, SELECT_YOUR_SNACKS, movie_name)
                 VALUES(?, ?, ?, ?, ? ,? , ? );");
 
     $stmt->bind_param("sssssss", $card_number,$card_holder, $expiration_mm, $expiration_yy, $cvv, $food,$movie_name);
     $stmt->execute();
 }
+echo "done";
+$conn->close();
+
+?>
 echo "done";
 $conn->close();
 
@@ -81,19 +84,19 @@ $conn->close();
 
     </div>
 
-    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method = "POST">
+    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
         <div class="inputBox">
             <span>card number</span>
-            <input type="text" maxlength="16" class="card-number-input" name="card number">
+            <input type="text" maxlength="16" class="card-number-input" name="card_number">
         </div>
         <div class="inputBox">
             <span>card holder</span>
-            <input type="text" maxlength="25" class="card-holder-input" name="card holder">
+            <input type="text" maxlength="25" class="card-holder-input" name="card_holder">
         </div>
         <div class="flexbox">
             <div class="inputBox">
                 <span>expiration mm</span>
-                <select name="" id="" class="month-input" name ="expiration mm">
+                <select name="expiration_mm" id="" class="month-input">
                     <option value="month" selected disabled>month</option>
                     <option value="01">01</option>
                     <option value="02">02</option>
@@ -111,7 +114,7 @@ $conn->close();
             </div>
             <div class="inputBox">
                 <span>expiration yy</span>
-                <select name="" id="" class="year-input" name="expiration yy">
+                <select name="expiration_yy" id="" class="year-input">
                     <option value="year" selected disabled>year</option>
                     <option value="2021">2021</option>
                     <option value="2022">2022</option>
@@ -132,7 +135,7 @@ $conn->close();
         </div>
         <div class="inputBox">
             <span>MOVIE NAME</span>
-            <select name="" id="" class="year-input" name="movie name">
+            <select name="movie_name" id="" class="year-input">
                 <option value="Movie Name" selected disabled>Movie Name</option>
                 <option value="Black Panther: Wakanda Forever">Black Panther: Wakanda Forever</option>
                 <option value="Avatar: The Way Of Water">Avatar: The Way Of Water</option>
@@ -144,7 +147,7 @@ $conn->close();
         </div>
         <div class="inputBox">
             <span>Select your snacks</span>
-            <select name="" id="" class="year-input" name = "food">
+            <select name="food" id="" class="year-input">
                 <option value="food" selected disabled>FOOD & DRINKS </option>
                 <option value="Popcorn Large">Popcorn Large 7.5$</option>
                 <option value="Popcorn Medium">Popcorn Medium 5$</option>
