@@ -8,7 +8,7 @@ $dbname = "movie";
 
 // Create connectionn
 $conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
+// Check connectionn
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
