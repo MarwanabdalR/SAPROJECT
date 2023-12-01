@@ -37,13 +37,41 @@ $conn->close();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link rel="stylesheet" href="stylesheet.css">
     <!-- custom css file link  -->
     <link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
+<header>
+            <img id='company_logo' src="header_img/header.png" alt="Logo" width="300px">
+            <table class="social">
+                <tr>
+                    <td>
+                        <p>Follow us&nbsp;</p>
+                    </td>
+                    <td>
+                        <a href="https://www.facebook.com" target="_blank"><img class="social" src="./social_img/facebook-logo.PNG" alt="fb-logo" width="23px"></a>
+                    </td>
+                    <td>
+                        <a href="https://www.twitter.com" target="_blank"><img class="social" src="./social_img/twitter-logo.png" alt="tt-logo" width="30px"></a>
+                    </td>
+                    <td>
+                        <a href="https://www.instagram.com" target="_blank"><img class="social" src="./social_img/Instagram-logo.png" alt="ig-logo" width="30px"></a>
+                    </td>
+                </tr>
+            </table>
+        </header>
+        <div id="nav">
+            <nav>
+                <ul class="nav">
+                    <li class="nav"><a href="index.php">Home</a></li>
+                    <li class="nav"><a class="active" href="movies.html">Movies</a></li>
+                    <li class="nav"><a href="cinema.html">Cinema</a></li>
 
+                </ul>
+            </nav>
+        </div>
 <div class="container">
 
     <div class="card-container">
@@ -197,7 +225,19 @@ document.querySelector('.cvv-input').oninput = () =>{
 
 
 </script>
-
+<div class="push"></div>
+        <footer class="footer flex-col">
+            <div class="flex-row space-betw" >
+                <a href="index.html"><small><b>About us</b></small></a>
+                <a href="index.html"><small><b>Careers</b></small></a>
+                <a href="index.html"><small><b>FAQs</b></small></a>
+                <a href="index.html"><small><b>Contact us</b></small></a>
+                <a href="index.html"><small><b>Terms of use</b></small></a>
+            </div>
+            <td><small><i>H&H Groups Company</i></small>
+                
+             </td>
+        </footer>
 
 
 
