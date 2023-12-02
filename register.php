@@ -86,11 +86,11 @@ if($stmt = $con->prepare('SELECT id, password From users WHERE user_name = ?')){
     }
     else{
         if($stmt = $con->prepare('INSERT INTO users (user_name, password, email) VALUES (?, ?, ?)')){
-            $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+            $password =$_POST['password'];
             $stmt->bind_param('sss', $_POST['uname'], $password, $_POST['email']);
             $stmt->execute();
             echo 'succesfully registered';
-            header("location: home.php"); //<<<<<<<---------- ال home هناااا
+            header("location: index.php"); //<<<<<<<---------- ال home هناااا
         }
         else{
             echo 'Error Occurred';
