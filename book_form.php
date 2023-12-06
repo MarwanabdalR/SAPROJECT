@@ -181,6 +181,13 @@ $conn->close();
             </select>
         </div>
 
+        <div>
+            <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="2 POPCORN + 1 FREE" aria-label="...">
+            <label class="form-check-label" for="radioNoLabel1">
+                2 POPCORN + 1 FREE
+            </label>
+        </div>
+        
         <input type="submit" value="submit" class="submit-btn" name="insert" onclick="showAlert()">
     </form>
 
