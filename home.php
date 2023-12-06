@@ -307,6 +307,12 @@ $conn->close();
              </td>
         </footer>
     </div>
-
+<script>
+            let count=0;
+            if(count==0){
+            alert("you are my customer ! 5% bonus on your first ticket");
+            count++;}
+            
+</script>
 </body>
 </html>

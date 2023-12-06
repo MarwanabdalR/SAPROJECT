@@ -173,7 +173,7 @@ $conn->close();
         <div class="inputBox">
             <span>Select your snacks</span>
             <select name="food" id="" class="year-input" required> 
-                <option value="food" selected disabled>FOOD & DRINKS </option>
+                <option value="food" selected disabled>FOOD & DRINKS(2popcorn+1 free)</option>
                 <option value="Popcorn Large">Popcorn Large 7.5$</option>
                 <option value="Popcorn Medium">Popcorn Medium 5$</option>
                 <option value="Popcorn Small">Popcorn Small 2.5$</option>
