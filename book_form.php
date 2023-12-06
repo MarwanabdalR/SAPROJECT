@@ -68,6 +68,7 @@ $conn->close();
                     <li class="nav"><a href="home.php">Home</a></li>
                     <li class="nav"><a class="active" href="movies.html">Movies</a></li>
                     <li class="nav"><a href="cinema.html">Cinema</a></li>
+                    <li class="nav"><a onclick="location.href='logout.php';" >Log Out</a></li>
 
                 </ul>
             </nav>
@@ -180,7 +181,7 @@ $conn->close();
             </select>
         </div>
 
-        <input type="submit" value="submit" class="submit-btn" name="insert">
+        <input type="submit" value="submit" class="submit-btn" name="insert" onclick="showAlert()">
     </form>
 
 </div>    
@@ -223,7 +224,9 @@ document.querySelector('.cvv-input').oninput = () =>{
 }
 
 
-
+        function showAlert() {
+            alert("Subimtted Succesfully");
+        }
 </script>
 <div class="push"></div>
         <footer class="footer flex-col">

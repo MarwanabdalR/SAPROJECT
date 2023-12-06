@@ -108,6 +108,7 @@ $conn->close();
                     <li class="nav"><a class="active" href="home.php">Home</a></li>
                     <li class="nav"><a href="movies.html">Movies</a></li>
                     <li class="nav"><a href="cinema.html">Cinema</a></li>
+                    <li class="nav"><a onclick="location.href='logout.php';" >Log Out</a></li>
                 </ul>
             </nav>
         </div>
