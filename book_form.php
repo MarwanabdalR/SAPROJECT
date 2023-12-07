@@ -187,7 +187,45 @@ $conn->close();
                 2 POPCORN + 1 FREE
             </label>
         </div>
-        
+
+
+        <div class="inputBox">
+            <span>ticket type</span>
+            <select name="" id="" class="year-input" required> 
+                <option value="food" selected disabled>select ticket type</option>
+                <option value="Popcorn Large">Normal</option>
+                <option value="Popcorn Medium">VIP</option>
+            </select>
+        </div>
+        <div>
+            <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="2 POPCORN + 1 FREE" aria-label="...">
+            <label class="form-check-label" for="radioNoLabel1">
+                Child ( 50% discount )
+            </label>
+
+            <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="2 POPCORN + 1 FREE" aria-label="...">
+            <label class="form-check-label" for="radioNoLabel1">
+                Adult 
+            </label>
+        </div>
+
+
+
+<BR></BR>
+
+        <label for="customRange2" class="form-label">ticket numbers</label>
+        <input type="range" class="form-range" min="0" max="10" id="customRange2">
+
+
+
+
+
+
+
+
+
+
+
         <input type="submit" value="submit" class="submit-btn" name="insert" onclick="showAlert()">
     </form>
 
