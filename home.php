@@ -163,7 +163,7 @@ $conn->close();
                 <button class="tablinks" onclick="openTab(event, 'Coming_Soon')">Coming Soon</button>
                 <button class="tablinks" onclick="openTab(event, 'feed')"> FeedBack</button>
             </div>
-              <!-- Tab content -->
+              <!-- Tab content  -->
 
             <div class="feedback-form tabcontent" id="feed">
                 <h2>Feedback Form</h2>
