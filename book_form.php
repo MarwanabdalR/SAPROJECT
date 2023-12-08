@@ -170,6 +170,21 @@ $conn->close();
                 <option value="Black Adam">Black Adam</option>
             </select>
         </div>
+
+
+
+        <div class="inputBox">
+            <span>Cinema NAME</span>
+            <select name="cinema_name" id="" class="year-input" required>
+            <option value="cinema Name" selected disabled>cinema Name</option>
+                <option value="cinema Name" selected disabled>Orchard Road</option>
+                <option value="Suntec City">Suntec City</option>
+                <option value="Northpoint City">Northpoint City</option>
+            </select>
+        </div>
+
+
+
         <div class="inputBox">
             <span>Select your snacks</span>
             <select name="food" id="" class="year-input" required> 
@@ -212,8 +227,14 @@ $conn->close();
 
 
 <BR></BR>
-
-        <label for="customRange2" class="form-label">ticket numbers</label>
+<label for=""> More than 2 tickets+2% bonus </label>
+<br>
+        <label for="customRange2" class="form-label">ticket numbers adult </label>
+        <input type="range" class="form-range" min="0" max="10" id="customRange2">
+<br>
+<label for=""> Child ticket: 50% discount </label>
+<br>
+        <label for="customRange2" class="form-label">ticket numbers child</label>
         <input type="range" class="form-range" min="0" max="10" id="customRange2">
 
 
